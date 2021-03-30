@@ -1,0 +1,19 @@
+{
+  "name": "malistedecourses",
+  "version": "1.0.0",
+  "description": "une liste de courses pour savoir quoi acheter pour remplir le frigo et les placards",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koala819/ma-liste-de-courses.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/koala819/ma-liste-de-courses/issues"
+  },
+  "homepage": "https://github.com/koala819/ma-liste-de-courses#readme"
+}
