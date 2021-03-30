@@ -1,3 +1,22 @@
 body {
-    background-color: aquamarine;
+    background-color: rgb(127, 208, 255);
+    font-size: 1.3em;
+}
+
+#maListe{
+    background-color: #FFF;
+    margin-top: 25px;
+    
+    border: 2px rgb(0, 0, 0) solid;
+    border-radius: 10px;
+    min-width: 180px;
+    width: 20%;
+    box-shadow: 6px 6px 8px rgb(91, 95, 93);
+    text-align: center;
+
+
+}
+
+ul {
+    list-style-type: none;
 }
