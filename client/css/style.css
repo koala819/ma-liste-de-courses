@@ -6,15 +6,15 @@ body {
 #maListe{
     background-color: #FFF;
     margin-top: 25px;
-    
     border: 2px rgb(0, 0, 0) solid;
     border-radius: 10px;
     min-width: 180px;
     width: 20%;
     box-shadow: 6px 6px 8px rgb(91, 95, 93);
-    text-align: center;
+}
 
-
+[type="checkbox"] {
+    float: left;
 }
 
 ul {
