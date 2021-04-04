@@ -1,5 +1,5 @@
-const buttonAdd = document.getElementById("addButton");
+const buttonAdd = document.getElementById('addButton');
 
-buttonAdd.addEventListener("click", () => {
+buttonAdd.addEventListener('click', () => {
     alert('Pas encore implémenté');
 })
