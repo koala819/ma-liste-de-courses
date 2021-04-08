@@ -12,7 +12,6 @@ const garlic = new Item('ail');
 const shoppingList = [butter, tomatoes, garlic];
 
 shoppingList.map((item) => {
-    console.log(item);
     document.getElementById('shoppingList').innerHTML += `<input type="checkbox" id="${item.id}"><label for="${item.id}">${item.name}</label>`;
 });
 

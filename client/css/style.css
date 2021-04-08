@@ -64,7 +64,7 @@ section {
   background: #484848;
 }
 
-/*input[type="checkbox"] { display: none; }*/
+input[type="checkbox"] { display: none; }
 
 input[type="checkbox"] + label {
   display: block;
@@ -79,7 +79,7 @@ input[type="checkbox"] + label {
   -ms-user-select: none;
 }
 
-/*input[type="checkbox"] + label:last-child { margin-bottom: 0; }
+input[type="checkbox"] + label:last-child { margin-bottom: 0; }
 
 input[type="checkbox"] + label:before {
   content: '';
@@ -105,4 +105,4 @@ input[type="checkbox"]:checked + label:before {
   border-left-color: transparent;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
-}*/
+}
