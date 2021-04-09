@@ -6,10 +6,7 @@ class Item {
     }
 }
 
-const butter = new Item('beurre salé', 'beurre');
-const tomatoes = new Item('tomates');
-const garlic = new Item('ail');
-const shoppingList = [butter, tomatoes, garlic];
+const shoppingList = [];
 transformItemListToHtml(shoppingList);
 
 function transformItemListToHtml(shoppingList) {
