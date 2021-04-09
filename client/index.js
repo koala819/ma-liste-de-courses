@@ -11,10 +11,11 @@ const tomatoes = new Item('tomates');
 const garlic = new Item('ail');
 const shoppingList = [butter, tomatoes, garlic];
 
-shoppingList.map((item) => {
-    document.getElementById('shoppingList').innerHTML += `<input type="checkbox" id="${item.id}"><label for="${item.id}">${item.name}</label>`;
+const shoppingListContent = shoppingList.map(item => {
+    return `<input type="checkbox" id="${item.id}"><label for="${item.id}">${item.name}</label>`;
 });
 
+document.getElementById('shoppingList').innerHTML = shoppingListContent.join('');
 const buttonAdd = document.getElementById('addButton');
 
 buttonAdd.addEventListener('click', () => {
