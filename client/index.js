@@ -19,9 +19,11 @@ function transformItemListToHtml(shoppingList) {
 const buttonAdd = document.getElementById('addButton');
 buttonAdd.addEventListener('click', (event) => {
     event.preventDefault();
-    const addInputElement = document.getElementById('addInputElement')
+    const addInputElement = document.getElementById('addInput')
     const item = new Item(addInputElement.value);
     shoppingList.push(item);
     transformItemListToHtml(shoppingList);
     addInputElement.value = '';
 });
+
+
