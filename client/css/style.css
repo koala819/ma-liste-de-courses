@@ -106,3 +106,7 @@ input[type="checkbox"]:checked + label:before {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+.line {
+  text-decoration: line-through;
+}

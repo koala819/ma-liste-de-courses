@@ -26,4 +26,7 @@ buttonAdd.addEventListener('click', (event) => {
     addInputElement.value = '';
 });
 
-
+const maListe = document.getElementById('shoppingList');
+maListe.addEventListener('click', (event) => {
+    maListe.classList.add('line');
+});
