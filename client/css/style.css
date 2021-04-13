@@ -107,6 +107,7 @@ input[type="checkbox"]:checked + label:before {
   transform: rotate(45deg);
 }
 
-.line {
+.checked {
   text-decoration: line-through;
+  color: dimgrey;
 }

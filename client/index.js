@@ -11,6 +11,9 @@ transformItemListToHtml(shoppingList);
 
 function transformItemListToHtml(shoppingList) {
     const shoppingListContent = shoppingList.map(item => {
+        if (item.checked) {
+            return `<input type="checkbox" id="${item.id}"><label for="${item.id}" class="checked">${item.name}</label>`;    
+        }
         return `<input type="checkbox" id="${item.id}"><label for="${item.id}">${item.name}</label>`;
     });
     document.getElementById('shoppingList').innerHTML = shoppingListContent.join('');
@@ -24,9 +27,4 @@ buttonAdd.addEventListener('click', (event) => {
     shoppingList.push(item);
     transformItemListToHtml(shoppingList);
     addInputElement.value = '';
-});
-
-const maListe = document.getElementById('shoppingList');
-maListe.addEventListener('click', (event) => {
-    maListe.classList.add('line');
 });
