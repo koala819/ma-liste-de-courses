@@ -24,7 +24,20 @@ buttonAdd.addEventListener('click', (event) => {
     event.preventDefault();
     const addInputElement = document.getElementById('addInput')
     const item = new Item(addInputElement.value);
+    item.checked=true;
     shoppingList.push(item);
     transformItemListToHtml(shoppingList);
     addInputElement.value = '';
 });
+
+const checkboxes = document.getElementsByTagName('input');
+console.log(checkboxes);
+for (let i=0 ; i < checkboxes.length ; i++) {
+    if (checkboxes.type == 'checkbox') {
+        console.log(checkboxes.id)
+        checkboxes.id.addEventListener('click', (event) => {
+            alert('tu as cliqué')
+        });
+    }
+}
+
