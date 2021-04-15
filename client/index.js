@@ -10,13 +10,14 @@ const shoppingList = [];
 transformItemListToHtml(shoppingList);
 
 function transformItemListToHtml(shoppingList) {
-    const shoppingListContent = shoppingList.map(item => {
-        if (item.checked) {
-            return `<input type="checkbox" id="${item.id}"><label for="${item.id}" class="checked">${item.name}</label>`;    
-        }
-        return `<input type="checkbox" id="${item.id}"><label for="${item.id}">${item.name}</label>`;
+    document.getElementById('shoppingList').innerHTML = '';
+    shoppingList.forEach(item => {
+        const input = createInputFromItem(item);
+        document.getElementById('shoppingList').appendChild(input);
+        input.addEventListener('click', (event) => {
+            alert('tu as cliqué sur ' + item.name);
+        })
     });
-    document.getElementById('shoppingList').innerHTML = shoppingListContent.join('');
 }
 
 const buttonAdd = document.getElementById('addButton');
@@ -24,20 +25,23 @@ buttonAdd.addEventListener('click', (event) => {
     event.preventDefault();
     const addInputElement = document.getElementById('addInput')
     const item = new Item(addInputElement.value);
-    item.checked=true;
     shoppingList.push(item);
     transformItemListToHtml(shoppingList);
     addInputElement.value = '';
 });
 
-const checkboxes = document.getElementsByTagName('input');
-console.log(checkboxes);
-for (let i=0 ; i < checkboxes.length ; i++) {
-    if (checkboxes.type == 'checkbox') {
-        console.log(checkboxes.id)
-        checkboxes.id.addEventListener('click', (event) => {
-            alert('tu as cliqué')
-        });
+function createInputFromItem(item) {
+    const input = document.createElement('input');
+    input.type = 'checkbox';
+    input.id = item.id;
+    if (item.checked) {
+        input.checked = true;
     }
+    const label = document.createElement('label');
+    label.for = item.id;
+    label.innerText = item.name;
+    const div = document.createElement('div');
+    div.appendChild(input);
+    div.appendChild(label);
+    return div;
 }
-
