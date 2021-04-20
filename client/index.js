@@ -25,9 +25,13 @@ buttonAdd.addEventListener('click', (event) => {
     event.preventDefault();
     const addInputElement = document.getElementById('addInput')
     const product = new Product(addInputElement.value);
-    shoppingList.push(product);
-    transformProductListToHtml(shoppingList);
-    addInputElement.value = '';
+    if (addInputElement.value === '') {
+        alert('merci de saisir un produit à rajouter à la liste');
+    } else {
+        shoppingList.push(product);
+        transformProductListToHtml(shoppingList);
+        addInputElement.value = '';
+    }
 });
 
 function createInputFromProduct(product) {
