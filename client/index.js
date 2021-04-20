@@ -1,4 +1,4 @@
-class Item {
+class Product {
     constructor(name, id, checked = false) {
         this.name = name;
         this.id = id ? id : name;
@@ -7,15 +7,15 @@ class Item {
 }
 
 const shoppingList = [];
-transformItemListToHtml(shoppingList);
+transformProductListToHtml(shoppingList);
 
-function transformItemListToHtml(shoppingList) {
+function transformProductListToHtml(shoppingList) {
     document.getElementById('shoppingList').innerHTML = '';
-    shoppingList.forEach(item => {
-        const input = createInputFromItem(item);
+    shoppingList.forEach(product => {
+        const input = createInputFromProduct(product);
         document.getElementById('shoppingList').appendChild(input);
         input.addEventListener('click', (event) => {
-            alert('tu as cliqué sur ' + item.name);
+            alert('tu as cliqué sur ' + product.name);
         })
     });
 }
@@ -24,22 +24,22 @@ const buttonAdd = document.getElementById('addButton');
 buttonAdd.addEventListener('click', (event) => {
     event.preventDefault();
     const addInputElement = document.getElementById('addInput')
-    const item = new Item(addInputElement.value);
-    shoppingList.push(item);
-    transformItemListToHtml(shoppingList);
+    const product = new Product(addInputElement.value);
+    shoppingList.push(product);
+    transformProductListToHtml(shoppingList);
     addInputElement.value = '';
 });
 
-function createInputFromItem(item) {
+function createInputFromProduct(product) {
     const input = document.createElement('input');
     input.type = 'checkbox';
-    input.id = item.id;
-    if (item.checked) {
+    input.id = product.id;
+    if (product.checked) {
         input.checked = true;
     }
     const label = document.createElement('label');
-    label.for = item.id;
-    label.innerText = item.name;
+    label.for = product.id;
+    label.innerText = product.name;
     const div = document.createElement('div');
     div.appendChild(input);
     div.appendChild(label);
