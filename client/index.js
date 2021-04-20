@@ -15,7 +15,7 @@ function transformProductListToHtml(shoppingList) {
         const input = createInputFromProduct(product);
         document.getElementById('shoppingList').appendChild(input);
         input.addEventListener('click', (event) => {
-            alert('tu as cliqué sur ' + product.name);
+            inputFromItemCheckedNew(product);
         })
     });
 }
@@ -44,4 +44,15 @@ function createInputFromProduct(product) {
     div.appendChild(input);
     div.appendChild(label);
     return div;
+}
+
+function inputFromItemCheckedNew(product) {
+    const checkbox = document.getElementById(product.id);
+    if (product.bought === false) {
+        checkbox.checked = true;
+        product.bought = true;
+    } else {
+        checkbox.checked = false;
+        product.bought = false;
+    }
 }
