@@ -27,6 +27,8 @@ buttonAdd.addEventListener('click', (event) => {
     const product = new Product(addInputElement.value);
     if (addInputElement.value === '') {
         alert('merci de saisir un produit à rajouter à la liste');
+    } else if (productAlreadyInList(product, shoppingList)) {
+        alert('---------------\nCe produit a déjà été saisi !\n---------------');
     } else {
         shoppingList.push(product);
         transformProductListToHtml(shoppingList);
@@ -59,4 +61,14 @@ function inputFromItemCheckedNew(product) {
         checkbox.checked = false;
         product.bought = false;
     }
+}
+
+function productAlreadyInList(newProduct, shoppingList) {
+    for (let i = 0; i < shoppingList.length; i++) {
+        let product = shoppingList[i];
+        if (product.name === newProduct.name) {
+            return true;
+        }
+    };
+    return false;
 }
