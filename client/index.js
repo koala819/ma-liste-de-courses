@@ -1,3 +1,30 @@
+class ShoppingList {
+    constructor(products) {
+        this.products = products;
+    }
+
+    toHtml() {
+        document.getElementById('shoppingList').innerHTML = '';
+        this.products.forEach(product => {
+            const input = createInputFromProduct(product);
+            document.getElementById('shoppingList').appendChild(input);
+            input.addEventListener('click', (event) => {
+                inputFromItemCheckedNew(product);
+            })
+        });
+    }
+
+    contains(newProduct) {
+        for (let i = 0; i < this.products.length; i++) {
+            let product = this.products[i];
+            if (product.name === newProduct.name) {
+                return true;
+            }
+        };
+        return false;
+    }
+}
+
 class Product {
     constructor(name, id, bought = false) {
         this.name = name;
@@ -6,20 +33,10 @@ class Product {
     }
 }
 
-const shoppingList = [];
-transformProductListToHtml(shoppingList);
+const shoppingList = new ShoppingList([]);
+shoppingList.toHtml();
 
-function transformProductListToHtml(shoppingList) {
-    document.getElementById('shoppingList').innerHTML = '';
-    shoppingList.forEach(product => {
-        const input = createInputFromProduct(product);
-        document.getElementById('shoppingList').appendChild(input);
-        input.addEventListener('click', (event) => {
-            inputFromItemCheckedNew(product);
-        })
-    });
-}
-
+//SHOPPING LIST
 const buttonAdd = document.getElementById('addButton');
 buttonAdd.addEventListener('click', (event) => {
     event.preventDefault();
@@ -27,15 +44,16 @@ buttonAdd.addEventListener('click', (event) => {
     const product = new Product(addInputElement.value);
     if (addInputElement.value === '') {
         alert('merci de saisir un produit à rajouter à la liste');
-    } else if (productAlreadyInList(product, shoppingList)) {
+    } else if (shoppingList.contains(product)) {
         alert('---------------\nCe produit a déjà été saisi !\n---------------');
     } else {
-        shoppingList.push(product);
-        transformProductListToHtml(shoppingList);
+        shoppingList.products.push(product);
+        shoppingList.toHtml();
         addInputElement.value = '';
     }
 });
 
+//PRODUCT
 function createInputFromProduct(product) {
     const input = document.createElement('input');
     input.type = 'checkbox';
@@ -52,6 +70,7 @@ function createInputFromProduct(product) {
     return div;
 }
 
+//PRODUCT
 function inputFromItemCheckedNew(product) {
     const checkbox = document.getElementById(product.id);
     if (product.bought === false) {
@@ -61,14 +80,4 @@ function inputFromItemCheckedNew(product) {
         checkbox.checked = false;
         product.bought = false;
     }
-}
-
-function productAlreadyInList(newProduct, shoppingList) {
-    for (let i = 0; i < shoppingList.length; i++) {
-        let product = shoppingList[i];
-        if (product.name === newProduct.name) {
-            return true;
-        }
-    };
-    return false;
 }
