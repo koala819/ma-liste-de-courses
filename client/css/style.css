@@ -53,7 +53,7 @@ section {
     -webkit-appearance: none;
   }
   
-  input[type="search"] {
+  input[type="text"] {
     flex-basis: 500px;
   }
 
@@ -79,7 +79,7 @@ input[type="checkbox"] + label {
   -ms-user-select: none;
 }
 
-input[type="checkbox"] + label:last-child { margin-bottom: 0; }
+input[type="checkbox"] + label:last-child { margin-bottom: 15px; }
 
 input[type="checkbox"] + label:before {
   content: '';
@@ -105,4 +105,9 @@ input[type="checkbox"]:checked + label:before {
   border-left-color: transparent;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.checked {
+  text-decoration: line-through;
+  color: dimgrey;
 }

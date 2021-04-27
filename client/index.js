@@ -1,23 +1,86 @@
-class Item {
-    constructor(name, id, checked = false) {
-        this.name = name;
-        this.id = id ? id : name;
-        this.checked = checked;
+class ShoppingList {
+    constructor(products) {
+        this.products = products;
+    }
+
+    toHtml() {
+        document.getElementById('shoppingList').innerHTML = '';
+        this.products.forEach(product => {
+            const input = product.createInputFrom(product);
+            document.getElementById('shoppingList').appendChild(input);
+            input.addEventListener('click', (event) => {
+                product.inputFromItemCheckedNew(product);
+            })
+        });
+    }
+
+    contains(newProduct) {
+        for (let i = 0; i < this.products.length; i++) {
+            let product = this.products[i];
+            if (product.name === newProduct.name) {
+                return true;
+            }
+        };
+        return false;
+    }
+
+    addListenerToButton(event) {
+        event.preventDefault();
+        const addInputElement = document.getElementById('addInput')
+        const product = new Product(addInputElement.value);
+        if (addInputElement.value === '') {
+            alert('merci de saisir un produit à rajouter à la liste');
+        } else if (shoppingList.contains(product)) {
+            alert('---------------\nCe produit a déjà été saisi !\n---------------');
+        } else {
+            shoppingList.products.push(product);
+            shoppingList.toHtml();
+            addInputElement.value = '';
+        }
     }
 }
 
-const butter = new Item('beurre salé', 'beurre');
-const tomatoes = new Item('tomates');
-const garlic = new Item('ail');
-const shoppingList = [butter, tomatoes, garlic];
+class Product {
+    constructor(name, id, bought = false) {
+        this.name = name;
+        this.id = id ? id : name;
+        this.bought = bought;
+    }
 
-const shoppingListContent = shoppingList.map(item => {
-    return `<input type="checkbox" id="${item.id}"><label for="${item.id}">${item.name}</label>`;
-});
+    createInputFrom(product) {
+        const input = document.createElement('input');
+        input.type = 'checkbox';
+        input.id = product.id;
+        if (product.bought) {
+            input.checked = true;
+        }
+        const label = document.createElement('label');
+        label.for = product.id;
+        label.innerText = product.name;
+        const div = document.createElement('div');
+        div.appendChild(input);
+        div.appendChild(label);
+        return div;
+    }
 
-document.getElementById('shoppingList').innerHTML = shoppingListContent.join('');
+    inputFromItemCheckedNew(product) {
+        const checkbox = document.getElementById(product.id);
+        if (product.bought === false) {
+            checkbox.checked = true;
+            product.bought = true;
+        } else {
+            checkbox.checked = false;
+            product.bought = false;
+        }
+    }
+}
+
+const shoppingList = new ShoppingList([]);
+shoppingList.toHtml();
+
+const product = new Product();
+
 const buttonAdd = document.getElementById('addButton');
-
-buttonAdd.addEventListener('click', () => {
-    alert('Pas encore implémenté');
-})
+buttonAdd.addEventListener('click', (event) => {
+    shoppingList.addListenerToButton(event);
+});
