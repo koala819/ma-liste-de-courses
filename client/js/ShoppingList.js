@@ -1,8 +1,8 @@
 import Product from './Product.js'
 
 class ShoppingList {
-    constructor(products) {
-        this.products = products;
+    constructor() {
+        this.products = [];
     }
 
     toHtml() {
