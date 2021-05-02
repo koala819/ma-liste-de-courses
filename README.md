@@ -8,9 +8,9 @@
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-coffee.svg)](https://forthebadge.com)
 
 Projet pour apprendre à communiquer avec le back en JavaScript.<br>
-- [x] Réalisation d'une maquette en HTML & CSS. 
-- [x] Création du formulaire
-- [x] Factorisation du code
-- [] Création des test unitaires.
+* [x] Réalisation d'une maquette en HTML & CSS. 
+* [x] Création du formulaire
+* [x] Factorisation du code<br>
+1. [ ] Création des test unitaires.
 <br>
 <img width="100%" height="800" src="04ListeCourses.jpg">
