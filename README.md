@@ -9,8 +9,8 @@
 
 Projet pour apprendre à communiquer avec le back en JavaScript.<br>
 - [x] Réalisation d'une maquette en HTML & CSS. 
-- [] Création du formulaire
-- [] Création des routes
-- [] Création de la base de données.
+- [x] Création du formulaire
+- [x] Factorisation du code
+- [] Création des test unitaires.
 <br>
 <img width="100%" height="800" src="04ListeCourses.jpg">
