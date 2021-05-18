@@ -1,8 +1,12 @@
+import React from "react";
+import AddInput from "./AddInput";
+import AddButton from "./AddButton";
+
 function Form() {
   return (
       <form className="flex-form">
-          <input id="addInput" type="text" placeholder="Produit à ajouter" />
-              <input id="addButton" type="submit" value="Ajouter" />
+          <AddInput />
+          <AddButton />
       </form>
   );
 }

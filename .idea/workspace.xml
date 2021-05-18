@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d1cf220f-b281-4b8f-9fe0-3c4987ed3117" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-react/src/App.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client-react/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client-react/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-react/src/ProductLine.js" beforeDir="false" afterPath="$PROJECT_DIR$/client-react/src/ProductLine.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-react/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client-react/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-react/src/reportWebVitals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-react/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-react/src/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/client-react/src/Form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-react/src/ShoppingList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client-react/src/ShoppingList.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +59,8 @@
       <workItem from="1620989223613" duration="3297000" />
       <workItem from="1621020133499" duration="1884000" />
       <workItem from="1621097055175" duration="369000" />
-      <workItem from="1621103766387" duration="1934000" />
+      <workItem from="1621103766387" duration="2666000" />
+      <workItem from="1621334074213" duration="929000" />
     </task>
     <servers />
   </component>
