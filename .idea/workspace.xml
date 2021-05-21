@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1cf220f-b281-4b8f-9fe0-3c4987ed3117" name="Default Changelist" comment="fixup! check inputValue if empty">
-      <change beforePath="$PROJECT_DIR$/client-react/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client-react/src/components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-react/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/client-react/src/components/App.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-react/src/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/client-react/src/components/Form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-react/src/ProductLine.js" beforeDir="false" afterPath="$PROJECT_DIR$/client-react/src/components/ProductLine.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-react/src/ShoppingList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client-react/src/components/ShoppingList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-react/src/Title.js" beforeDir="false" afterPath="$PROJECT_DIR$/client-react/src/components/Title.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-react/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client-react/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-react/src/models/Product.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +36,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client-react/src" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client-react/src/components" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -67,7 +64,7 @@
       <workItem from="1621334074213" duration="1662000" />
       <workItem from="1621368267946" duration="433000" />
       <workItem from="1621414118031" duration="1529000" />
-      <workItem from="1621593841352" duration="1026000" />
+      <workItem from="1621593841352" duration="1178000" />
     </task>
     <servers />
   </component>
