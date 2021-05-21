@@ -2,7 +2,7 @@ import React from 'react';
 import Title from './Title';
 import Form from "./Form";
 import ShoppingList from "./ShoppingList";
-import './index.css';
+import '../index.css';
 
 function App() {
   return (
