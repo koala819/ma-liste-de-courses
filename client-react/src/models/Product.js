@@ -5,3 +5,5 @@ class Product {
         this.bought = bought;
     }
 }
+
+export default Product
