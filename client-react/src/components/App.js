@@ -5,24 +5,18 @@ import ShoppingList from "./ShoppingList";
 import Product from "../models/Product";
 import '../index.css';
 
-const defaultProducts= [
-    new Product('kiwi'),
-    new Product('fraise'),
-    new Product('moutarde'),
-]
-
 function App() {
-    const [products, setProducts] = useState(defaultProducts);
+    const [products, setProducts] = useState([]);
   return (
       <div>
           <header>
               <Title />
           </header>
           <section>
-              <Form />
+              <Form setProducts={setProducts} />
           </section>
           <section>
-              <ShoppingList products={defaultProducts} />
+              <ShoppingList products={products} />
           </section>
       </div>
   );

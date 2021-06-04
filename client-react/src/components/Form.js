@@ -1,6 +1,7 @@
 import React, {useState} from "react";
+import Product from "../models/Product";
 
-function Form() {
+function Form({setProducts}) {
   const [inputValue, setInputValue] = useState('');
 
   function checkInputValue(event) {
@@ -8,7 +9,12 @@ function Form() {
       if (inputValue === '') {
           alert('Le champ est vide')
       } else {
-          alert('yes you can')
+          const newProduct = new Product (inputValue)
+          setProducts((products) => {
+              const productsClone = [...products];
+              productsClone.push(newProduct)
+              return productsClone;
+          });
       }
   }
 
