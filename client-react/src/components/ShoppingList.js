@@ -1,6 +1,6 @@
 import ProductLine from './ProductLine';
 
-function ShoppingList({products}) {
+function ShoppingList({ products, onProductCheck }) {
     return (
         <div className="maListe" id="shoppingList">
             { products.map((product) => (
@@ -9,6 +9,7 @@ function ShoppingList({products}) {
                         id={product.id}
                         text={product.name}
                         checked={product.bought}
+                        onProductCheck={onProductCheck}
                   />
             ))}
         </div>

@@ -1,22 +1,21 @@
 import React from 'react';
 
-function ProductLine(props) {
-    const labelClass = props.checked ? "checked" : "";
-    const toto = props.checked;
+function ProductLine({ id, checked, text, onProductCheck }) {
+    const labelClass = checked ? "checked" : "";
 
     return (
         <div>
             <input
-                id={props.id}
+                id={id}
                 type='checkbox'
-                checked={props.checked}
-                onChange={() => !toto}
+                checked={checked}
+                onChange={() => onProductCheck(id)}
             />
             <label
-              htmlFor={props.id}
+              htmlFor={id}
               className={labelClass}
             >
-                {props.text}
+                {text}
             </label>
         </div>
     )

@@ -7,8 +7,19 @@ import '../index.css';
 function App() {
     const [products, setProducts] = useState([]);
 
-    function updateProductInList(products) {
-        setProducts();
+    function onProductCheck(idOfProductToCheck) {
+        setProducts((products) => {
+            const productToCheckIndex = products.findIndex(
+                (productInList) => productInList.id === idOfProductToCheck
+            );
+            const productToCheck = products[productToCheckIndex];
+            productToCheck.bought = true;
+
+            const newProducts = Array.from(products);
+            newProducts[productToCheckIndex] = productToCheck;
+
+            return newProducts;
+        });
     }
 
     return (
@@ -20,7 +31,10 @@ function App() {
                   <Form setProducts={setProducts} />
               </section>
               <section>
-                  <ShoppingList products={products} />
+                  <ShoppingList
+                      products={products}
+                      onProductCheck={onProductCheck}
+                  />
               </section>
           </div>
       );
