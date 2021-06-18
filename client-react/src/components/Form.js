@@ -7,12 +7,13 @@ function Form({setProducts}) {
   function checkInputValue(event) {
       event.preventDefault();
       if (inputValue === '') {
-          alert('Le champ est vide')
+          alert('Le champ est vide');
       } else {
-          const newProduct = new Product (inputValue)
           setProducts((products) => {
+              const productID = products.length+1;
+              const newProduct = new Product (inputValue, productID);
               const productsClone = [...products];
-              productsClone.push(newProduct)
+              productsClone.push(newProduct);
               return productsClone;
           });
       }
