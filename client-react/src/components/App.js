@@ -3,6 +3,7 @@ import Title from './Title';
 import Form from "./Form";
 import ShoppingList from "./ShoppingList";
 import '../index.css';
+import Product from "../models/Product";
 
 function App() {
     const [products, setProducts] = useState([]);
@@ -13,11 +14,9 @@ function App() {
                 (productInList) => productInList.id === idOfProductToCheck
             );
             const productToCheck = products[productToCheckIndex];
-            productToCheck.bought = true;
-
+            const secondProductToCheck = new Product (productToCheck.name, productToCheck.id, !productToCheck.bought)
             const newProducts = Array.from(products);
-            newProducts[productToCheckIndex] = productToCheck;
-
+            newProducts[productToCheckIndex] = secondProductToCheck;
             return newProducts;
         });
     }
