@@ -1,4 +1,4 @@
-import React, {useState, Component} from 'react';
+import React, {useState} from 'react';
 import Title from './Title';
 import Form from "./Form";
 import ShoppingList from "./ShoppingList";
