@@ -4,9 +4,10 @@ import Form from "./Form";
 import ShoppingList from "./ShoppingList";
 import '../index.css';
 import Product from "../models/Product";
+import useStickyState from "../hooks/useStickyState";
 
 function App() {
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useStickyState([], "products");
 
     function onProductCheck(idOfProductToCheck) {
         setProducts((products) => {
