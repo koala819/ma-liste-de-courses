@@ -16,6 +16,7 @@ function Form({setProducts}) {
               productsClone.push(newProduct);
               return productsClone;
           });
+          setInputValue('')
       }
   }
 
